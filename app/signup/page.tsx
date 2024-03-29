@@ -1,12 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { redirect } from "next/navigation";
 import prisma from "@/lib/db";
-
 
 const Signup = () => {
   const createUser = async (formData: FormData) => {
     "use server";
-
     const rawFormData = {
       username: formData.get("username")?.toString(),
       email: formData.get("email")?.toString() || "",
@@ -22,8 +21,14 @@ const Signup = () => {
           password: rawFormData.password,
         },
       });
+      console.log(newUser);
+      //   redirect("/app"); Add redirect to logic after successfull login
     } catch (error) {
       console.log(error);
+    } finally {
+        formData.set("username", ""),
+        formData.set("email", ""),
+        formData.set("password", "");
     }
   };
 
@@ -33,7 +38,7 @@ const Signup = () => {
         <div className="form-fields w-full h-full flex flex-col gap-3">
           <Input
             className="border border-black"
-            placeholder="Name"
+            placeholder="Username"
             name="username"
           />
           <Input
