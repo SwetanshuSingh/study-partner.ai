@@ -86,6 +86,33 @@ const Hero = () => {
                 </p>
               </div>
             </li>
+            <li className="mx-4 w-36 md:w-52">
+              <div className="flex flex-col items-center gap-2 text-stone-500 hover:text-stone-800 md:gap-4 text-lg md:text-2xl">
+                <button className="bg-orange-200 text-orange-500 ring-orange-400 min-h-28 min-w-28 h-28 w-28 sm:h-32 sm:w-32 md:h-36 md:w-36 p-6 md:p-8 flex items-center justify-center rounded-3xl transition-all duration-300 ease-in-out hover:ring-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="bg-orange-200 text-orange-500 ring-orange-400 h-full w-full stroke-2"
+                  >
+                    <path d="M5 4h1a3 3 0 0 1 3 3 3 3 0 0 1 3-3h1"></path>
+                    <path d="M13 20h-1a3 3 0 0 1-3-3 3 3 0 0 1-3 3H5"></path>
+                    <path d="M5 16H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1"></path>
+                    <path d="M13 8h7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-7"></path>
+                    <path d="M9 7v10"></path>
+                  </svg>
+                </button>
+                <p className="text-center font-medium md:font-bold">
+                  Quiz
+                </p>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
