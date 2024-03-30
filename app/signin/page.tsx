@@ -1,0 +1,52 @@
+"use client"
+
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { signIn } from "next-auth/react";
+
+const SignIn = () => {
+  const createUser = async (formData: FormData) => {
+    const rawFormData = {
+      email: formData.get("email")?.toString() || "",
+      password: formData.get("password")?.toString(),
+    };
+    // Add Zod Validation here
+    try {
+      signIn("credentials", {
+        email : rawFormData.email,
+        password : rawFormData.password,
+        redirect : false
+      })
+      //   redirect("/app"); Add redirect to logic after successfull login
+    } catch (error) {
+      console.log(error);
+    } finally {
+        formData.set("email", ""),
+        formData.set("password", "");
+    }
+  };
+
+  return (
+    <main className="w-full h-[100vh] flex justify-center items-center">
+      <form className="w-fit flex flex-col gap-4" action={createUser}>
+        <div className="form-fields w-full h-full flex flex-col gap-3">
+          <Input
+            className="border border-black"
+            placeholder="Email"
+            type="email"
+            name="email"
+          />
+          <Input
+            className="border border-black"
+            placeholder="Password"
+            type="password"
+            name="password"
+          />
+        </div>
+        <Button>Sign In</Button>
+      </form>
+    </main>
+  );
+};
+
+export default SignIn;

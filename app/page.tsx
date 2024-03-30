@@ -1,9 +1,14 @@
-const Home = () => {
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+
+const Landing = () => {
   return (
-    <div className="w-full h-[100vh]">
-      <h3>Home Page</h3>
+    <div className="w-full h-full flex flex-col gap-10">
+      <Navbar />
+      <Hero />
+      
     </div>
   );
 };
 
-export default Home;
+export default Landing;
