@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="w-full h-32 flex flex-col gap-3 items-center">
+    <section className="w-full h-32 mb-4 flex flex-col gap-3 items-center">
       <h1 className="text-5xl font-semibold md:text-6xl lg:text-7xl">
         Study Faster with AI
       </h1>
