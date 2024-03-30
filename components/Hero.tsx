@@ -159,7 +159,7 @@ const Hero = () => {
           </span>
         </div>
       </div>
-      <Link href="/signup">
+      <Link href="/summary">
         <button className="flex-shrink rounded-xl bg-stone-800 p-4 px-8 text-center font-bold text-stone-50 hover:bg-stone-700 md:w-96 md:text-xl">
           Get Started{" "}
         </button>
